@@ -1,0 +1,529 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Header - Logo et menu */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Un peu d'espace entre le logo et le menu */
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 30px; /* Espacement entre les éléments du menu */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FF6F61;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px; /* Pour éviter que la section ne se superpose au header fixe */
+    position: relative;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1556782741-60213034f33f');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FF4F39;
+}
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 200;
+}
+
+.language-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Menu déroulant des langues */
+.language-dropdown {
+    position: absolute;
+    top: 30px;  /* Position juste en dessous de l'icône */
+    background-color: #444;
+    width: 150px;
+    border-radius: 5px;
+    display: none; /* Par défaut, le menu est caché */
+    flex-direction: column;
+}
+
+
+/* Lorsque le menu des langues est visible */
+.language-dropdown.show {
+    display: flex; /* Afficher le menu */
+    opacity: 1; /* Rendre l'élément visible */
+    pointer-events: auto; /* Permettre les clics sur les éléments du menu */
+}
+
+.language-dropdown a {
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.language-dropdown a:hover {
+    background-color: #FF6F61;
+}
+
+
+/* Scroll Section */
+.scroll-section {
+    background-color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.scroll-section h2 {
+    color: #FF6F61;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.scroll-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.scroll-item {
+    background-color: #444;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.scroll-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.scroll-item h3 {
+    margin-top: 15px;
+    color: #FF6F61;
+}
+
+.scroll-item p {
+    color: #ddd;
+}
+
+.scroll-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+/* Language Selector - Positionnement */
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Rendre l'élément au-dessus */
+}
+
+/* Menu déroulant des langues */
+.language-dropdown {
+    position: absolute;
+    top: 40px;  /* Position juste sous l'icône */
+    right: 0;
+    background-color: #444;
+    width: 150px;
+    border-radius: 5px;
+    display: none; /* Par défaut, caché */
+    flex-direction: column;
+    z-index: 1000; /* Assurer que le dropdown est bien au-dessus */
+    pointer-events: none; /* Désactiver les événements lorsque caché */
+}
+
+/* Quand le menu est visible */
+.language-dropdown.show {
+    display: flex; /* Affiche le menu */
+    opacity: 1; /* Visible */
+    pointer-events: auto; /* Autoriser les événements */
+}
+
+.language-dropdown a {
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.language-dropdown a:hover {
+    background-color: #FF6F61;
+}
+
+/* Menu Section */
+.scroll-section {
+    background-color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Conteneur principal */
+.menu-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Wrapper des éléments, qui sera défilé */
+.menu-wrapper {
+    display: flex;
+    animation: scrollCarousel 20s linear infinite; /* Animation infinie */
+}
+
+/* Item */
+.menu-item {
+    flex: 0 0 auto; /* Chaque élément prend sa propre largeur */
+    width: 25%; /* Chaque item prend 25% de la largeur du conteneur */
+    margin: 0 10px;
+    background-color: #444;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    margin-top: 10px;
+    color: #FF6F61;
+}
+
+.menu-item p {
+    color: #ddd;
+}
+
+.menu-item .btn-more {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item .btn-more:hover {
+    background-color: #FF4F39;
+}
+
+/* Animation infinie */
+@keyframes scrollCarousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Déplace le carrousel complètement */
+    }
+}
+
+
+/* Section de détails */
+#plat-details {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+#plat-details h3 {
+    margin-bottom: 20px;
+}
+
+#plat-details p {
+    margin-bottom: 20px;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 30px;  /* Taille des icônes */
+    color: white;     /* Icônes en blanc */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0077b5;  /* Change la couleur en bleu sur le survol (par exemple LinkedIn) */
+}
+/* Responsivité */
+@media (max-width: 768px) {
+    /* Réduire la taille de la police pour les petits écrans */
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Le logo devient plus petit sur les petits écrans */
+    .logo {
+        width: 40px;
+    }
+
+    /* Menu en mode colonne pour mobile */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Réduire la taille du menu dropdown */
+    .language-dropdown {
+        width: 130px;
+    }
+
+    /* Changer la disposition du menu déroulant */
+    .menu-wrapper {
+        flex-direction: column; /* Empiler les éléments pour les petits écrans */
+    }
+
+    .menu-item {
+        width: 100%; /* Chaque item occupe toute la largeur */
+    }
+
+    /* Ajuster le texte du bouton CTA */
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
+/* Section Contact */
+.contact-section,
+.about-section {
+    background-color: #333; /* Fond sombre */
+    color: #fff; /* Texte blanc pour contraste */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Titre */
+.contact-section h2,
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Paragraphe de description */
+.contact-section p,
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc; /* Couleur plus claire pour le texte */
+    margin-bottom: 30px;
+}
+
+/* Style pour la section Contact */
+#contact {
+    padding: 40px;
+    background-color: #444242;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#contact-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#contact-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form .form-group label {
+    font-weight: bold;
+    display: block;
+}
+
+#contact-form .form-group input,
+#contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style pour la section À propos */
+#about {
+    padding: 40px;
+    background-color: #484646;
+    margin-top: 30px;
+}
+
+#about-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#about-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.about-item {
+    flex: 1 1 30%;
+}
+
+.about-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.about-item p {
+    font-size: 1rem;
+}

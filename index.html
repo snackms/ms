@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack M&S - Cuisine Asiatique & Créole</title>
+    <link rel="stylesheet" href="styles.css">
+    <head>
+        <!-- Lien pour charger Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+</head>
+<body>
+
+    <!-- Header avec logo et menu -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Snack M&S" class="logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#precommande">Precommande</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">À Propos</a></li>
+            </ul>
+        </nav>
+        <div class="language-selector" onclick="toggleLanguageDropdown(event)">
+            <img src="globe-icone.png" alt="Langue" class="language-icon">
+            <span id="selected-language"></span>
+            <div class="language-dropdown">
+                <a href="#" onclick="changeLanguage('fr')">Français</a>
+                <a href="#" onclick="changeLanguage('en')">English</a>
+                <a href="#" onclick="changeLanguage('es')">Español</a>
+                <a href="#" onclick="changeLanguage('creole')">Créole</a>
+                <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+                <a href="#" onclick="changeLanguage('zh')">中文</a>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 id="hero-title">Snack M&S</h1>
+        <p id="hero-description">Découvrez une fusion de saveurs asiatiques et créoles !</p>
+        <button class="cta-button" onclick="scrollToMenu()">Explorer notre menu</button>
+    </section>
+    <section id="menu" class="scroll-section">
+        <h2 id="menu-title">Nos Spécialités</h2>
+        <div class="menu-slider">
+            <div class="menu-wrapper">
+                <div class="menu-item">
+                    <img src="riz-cantonais.png" alt="Riz Cantonais">
+                    <h3>Riz Cantonais</h3>
+                    <p>Un plat savoureux à base de riz, légumes et viande.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="nouilles.png" alt="Nouilles">
+                    <h3>Nouilles</h3>
+                    <p>Des nouilles sautées aux légumes et sauce soja.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="nems.png" alt="Nems">
+                    <h3>Nems</h3>
+                    <p>Délicieux rouleaux de printemps frits.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="legumes.png" alt="Légumes">
+                    <h3>Légumes</h3>
+                    <p>Un mélange de légumes frais sautés.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="riz-blanc.png" alt="Riz Blanc">
+                    <h3>Riz Blanc</h3>
+                    <p>Riz parfumé servi en accompagnement.</p>
+                </div>
+                
+                <!-- Dupliquer les éléments pour la boucle infinie -->
+                <div class="menu-item">
+                    <img src="riz-cantonais.png" alt="Riz Cantonais">
+                    <h3>Riz Cantonais</h3>
+                    <p>Un plat savoureux à base de riz, légumes et viande.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="nouilles.png" alt="Nouilles">
+                    <h3>Nouilles</h3>
+                    <p>Des nouilles sautées aux légumes et sauce soja.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="nems.png" alt="Nems">
+                    <h3>Nems</h3>
+                    <p>Délicieux rouleaux de printemps frits.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="legumes.png" alt="Légumes">
+                    <h3>Légumes</h3>
+                    <p>Un mélange de légumes frais sautés.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="riz-blanc.png" alt="Riz Blanc">
+                    <h3>Riz Blanc</h3>
+                    <p>Riz parfumé servi en accompagnement.</p>
+                </div>
+            </div>
+        </div>
+        <section id="precommande" class="scroll-section" style="background-color: #2C2C2C; color: #fff; padding: 50px 0;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem;">Précommandez et récupérez sans faire la queue !</h2>
+                <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                    Commandez vos plats préférés, payez en ligne et choisissez l'heure de retrait. À votre arrivée, présentez simplement votre numéro de commande à l'accueil et récupérez votre repas sans attendre. 
+                    Plus simple, plus rapide, et plus pratique que jamais !
+                </p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="page-de-precommande.html" class="cta-button" style="background-color: #FF6347; color: white; padding: 15px 30px; text-decoration: none; font-size: 1.2rem; border-radius: 5px;">
+                        Précommander Maintenant
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+    </section>
+    <!-- Section Contact -->
+    <section id="contact" class="scroll-section">
+        <h2 id="contact-title">Contactez-nous</h2>
+        <p id="contact-description">Si vous avez des questions, des suggestions ou souhaitez prendre contact avec nous, n'hésitez pas à remplir le formulaire ci-dessous.</p>
+        
+        <form action="snackmsofficielle@gmail.com" method="POST" enctype="multipart/form-data" id="contact-form">
+            <div class="form-group">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+            </div>
+            
+            <button type="submit" class="cta-button">Envoyer</button>
+        </form>
+    </section>
+    <!-- Section À propos -->
+    <section id="about" class="scroll-section">
+        <h2 id="about-title">À Propos de Nous</h2>
+        <p id="about-description">Snack M&S est une entreprise passionnée par la fusion des saveurs asiatiques et créoles. Nous mettons un point d'honneur à offrir une expérience culinaire unique, en combinant les meilleures recettes traditionnelles avec une touche moderne.</p>
+        
+        <div class="about-content">
+            <div class="about-item">
+                <h3>Notre Mission</h3>
+                <p>Notre mission est d'offrir une cuisine de qualité, riche en saveurs et en diversité, tout en restant fidèle à l'authenticité des cultures asiatiques et créoles.</p>
+            </div>
+            
+            <div class="about-item">
+                <h3>Notre Équipe</h3>
+                <p>Notre équipe est composée de chefs passionnés qui utilisent les ingrédients les plus frais et les techniques les plus innovantes pour créer des plats délicieux et mémorables.</p>
+            </div>
+            
+            <div class="about-item">
+                <h3>Nos Valeurs</h3>
+                <p>Nous croyons en la qualité, l'authenticité et l'innovation. Nous nous engageons à fournir un service exceptionnel à chaque client, à respecter les traditions culinaires et à encourager la créativité dans nos plats.</p>
+            </div>
+        </div>
+    </section>
+
+
+    
+            
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Snack M&S - Tous droits réservés</p>
+    </footer>
+    <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i> <!-- Icône Facebook -->
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i> <!-- Icône Instagram -->
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i> <!-- Icône Twitter -->
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i> <!-- Icône LinkedIn -->
+        </a>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

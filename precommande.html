@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Précommandez Votre Repas - Snack M&S</title>
+    <link rel="stylesheet" href="stylees.css"> <!-- Lien vers le fichier CSS externe -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Précommandez Votre Repas</h1>
+    </header>
+
+    <!-- Formulaire de précommande -->
+    <section class="form-container">
+        <h2>Commande à emporter</h2>
+        <p>Choisissez vos plats, indiquez l'heure de retrait et payez en ligne pour éviter la file d'attente. Vous pourrez récupérer votre repas avec votre numéro de commande.</p>
+
+        <form id="precommande-form">
+            <label for="plat">Choisissez votre plat :</label>
+            <select id="plat" name="plat">
+                <option value="riz-cantonais">Riz Cantonais</option>
+                <option value="nouilles">Nouilles</option>
+                <option value="nems">Nems</option>
+                <option value="legumes">Légumes sautés</option>
+                <option value="riz-blanc">Riz Blanc</option>
+            </select>
+
+            <label for="heure-retrait">Choisissez l'heure de retrait :</label>
+            <input type="time" id="heure-retrait" name="heure-retrait" required>
+
+            <label for="nom-client">Votre nom :</label>
+            <input type="text" id="nom-client" name="nom-client" required placeholder="Entrez votre nom">
+
+            <label for="email-client">Votre email :</label>
+            <input type="email" id="email-client" name="email-client" required placeholder="Entrez votre email">
+
+            <label for="numero-commande">Numéro de commande :</label>
+            <input type="text" id="numero-commande" name="numero-commande" readonly>
+
+            <!-- Section de paiement -->
+            <label for="paiement">Total à payer : 15€</label>
+            <div id="payment-form">
+                <!-- Bouton pour payer via Stripe -->
+                <button type="button" id="pay-button">Payer maintenant</button>
+            </div>
+
+            <button type="submit" id="submit-button" style="display: none;">Confirmer la Précommande</button>
+        </form>
+
+        <div id="confirmation" style="display: none; text-align: center; margin-top: 30px;">
+            <h3>Merci pour votre précommande !</h3>
+            <p>Vous pouvez venir récupérer votre repas à l'heure choisie.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Snack M&S - Tous droits réservés</p>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript externe -->
+    <script src="precommande.js"></script>
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+</body>
+</html>
